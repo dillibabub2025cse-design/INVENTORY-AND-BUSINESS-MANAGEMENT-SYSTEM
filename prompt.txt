@@ -1,0 +1,340 @@
+Act as a senior Java software engineer, database architect, and college project mentor.
+
+Build a complete, professional, menu-driven CONSOLE APPLICATION titled "INVENTORY AND BUSINESS MANAGEMENT SYSTEM" using Java and MySQL.
+
+PROJECT OBJECTIVE:
+Develop a real-world business management application that allows an administrator to manage products, suppliers, customers, purchases, sales, inventory, employees, expenses, and business reports through a command-line interface.
+
+MANDATORY TECHNOLOGY:
+- Java (Core Java, OOP, Collections, Exception Handling)
+- MySQL 8.x
+- JDBC for database connectivity
+- Maven for dependency management
+- PreparedStatement for all SQL operations
+- MySQL Connector/J
+- Console-based interface only (NO Swing, JavaFX, HTML, CSS, or web application).
+
+1. LOGIN AND AUTHENTICATION
+- Admin login with username and password.
+- Secure password hashing.
+- Logout functionality.
+- Login validation.
+- Role-based access for Admin and Staff.
+- Prevent unauthorized access to management operations.
+
+2. DASHBOARD
+Display:
+- Total products.
+- Total stock quantity.
+- Low-stock products.
+- Total suppliers.
+- Total customers.
+- Today's sales.
+- Monthly revenue.
+- Total expenses.
+- Estimated profit.
+- Recent transactions.
+
+3. PRODUCT MANAGEMENT
+- Add new products.
+- View all products.
+- Search products by ID, name, category, or barcode.
+- Update product details.
+- Delete products with validation.
+- Manage product categories.
+- Set purchase price and selling price.
+- Set minimum stock level.
+- Check product availability.
+- Display low-stock and out-of-stock alerts.
+
+4. SUPPLIER MANAGEMENT
+- Add suppliers.
+- View supplier details.
+- Update supplier information.
+- Delete suppliers with dependency validation.
+- Search suppliers.
+- Maintain supplier contact details and purchase history.
+
+5. CUSTOMER MANAGEMENT
+- Register customers.
+- View customer records.
+- Update customer details.
+- Search customers.
+- Maintain customer purchase history.
+
+6. PURCHASE MANAGEMENT
+- Create purchase orders.
+- Select suppliers.
+- Add multiple products to a purchase.
+- Enter purchase quantity and unit cost.
+- Automatically calculate subtotals and grand total.
+- Update inventory after successful purchase confirmation.
+- Maintain purchase history.
+- Generate purchase invoices.
+- Support purchase cancellation with correct stock reversal.
+
+7. SALES MANAGEMENT
+- Create sales transactions.
+- Select customers.
+- Add multiple products to a sale.
+- Check stock before selling.
+- Prevent sales exceeding available stock.
+- Automatically calculate subtotal, discount, tax, and final amount.
+- Reduce stock after successful sale.
+- Generate unique invoice numbers.
+- View sales history.
+- Support sales cancellation with proper stock restoration.
+
+8. INVENTORY MANAGEMENT
+- Display current stock.
+- Track stock-in and stock-out.
+- Maintain stock movement history.
+- Low-stock alerts.
+- Out-of-stock alerts.
+- Manual stock adjustment with reason.
+- Inventory valuation.
+- Stock audit report.
+
+9. EMPLOYEE MANAGEMENT
+- Add employees.
+- Update employee details.
+- View employee list.
+- Assign Admin or Staff roles.
+- Activate and deactivate employees.
+
+10. EXPENSE MANAGEMENT
+- Record business expenses.
+- Expense categories.
+- View expense history.
+- Update and delete expenses with validation.
+- Calculate total expenses.
+- Monthly expense reports.
+
+11. BUSINESS REPORTS
+Generate:
+- Daily sales report.
+- Weekly sales report.
+- Monthly sales report.
+- Annual sales report.
+- Purchase report.
+- Inventory report.
+- Low-stock report.
+- Supplier report.
+- Customer report.
+- Expense report.
+- Revenue report.
+- Profit and loss report.
+- Top-selling products.
+- Sales performance summary.
+
+12. DATABASE DESIGN
+Create a properly normalized MySQL database named inventory_business_db.
+
+Create tables:
+- users
+- roles
+- employees
+- categories
+- products
+- suppliers
+- customers
+- purchases
+- purchase_items
+- sales
+- sale_items
+- stock_movements
+- expenses
+
+Use:
+- Primary keys.
+- Foreign keys.
+- UNIQUE constraints.
+- NOT NULL constraints.
+- CHECK constraints where appropriate.
+- Appropriate indexes.
+- DECIMAL for monetary values.
+- DATE and TIMESTAMP for date tracking.
+- Proper relationships and referential integrity.
+
+Provide complete database.sql with CREATE DATABASE, CREATE TABLE, indexes, sample data, and initial admin account setup.
+
+13. IMPORTANT BUSINESS LOGIC
+- Stock must never become negative.
+- Purchase confirmation must increase stock.
+- Sale confirmation must decrease stock.
+- Cancelled sales must restore stock exactly once.
+- Cancelled purchases must reverse stock only when safe.
+- Use database transactions with commit and rollback.
+- Use foreign key validation.
+- Prevent duplicate invoices.
+- Validate all input values.
+- Do not allow invalid quantities or negative prices.
+- Calculate profit using clearly defined purchase-cost and sales calculations.
+- Ensure all database operations are consistent.
+
+14. JAVA PROJECT ARCHITECTURE
+
+Use a clean layered architecture:
+
+src/main/java/
+  config/
+    DBConnection.java
+  model/
+    User.java
+    Employee.java
+    Product.java
+    Category.java
+    Supplier.java
+    Customer.java
+    Purchase.java
+    PurchaseItem.java
+    Sale.java
+    SaleItem.java
+    Expense.java
+  dao/
+    UserDAO.java
+    ProductDAO.java
+    SupplierDAO.java
+    CustomerDAO.java
+    PurchaseDAO.java
+    SalesDAO.java
+    InventoryDAO.java
+    EmployeeDAO.java
+    ExpenseDAO.java
+    ReportDAO.java
+  service/
+    AuthService.java
+    ProductService.java
+    PurchaseService.java
+    SalesService.java
+    InventoryService.java
+    ReportService.java
+  util/
+    InputValidator.java
+    PasswordUtil.java
+    InvoiceGenerator.java
+    ConsoleFormatter.java
+  main/
+    Main.java
+
+15. CONSOLE USER INTERFACE
+
+Create an attractive, well-formatted console interface with:
+- Application title banner.
+- Welcome screen.
+- Login screen.
+- Numbered menus.
+- Tables with aligned columns.
+- Clear success and error messages.
+- Confirmation before destructive operations.
+- Navigation using menu choices.
+- Date and time display.
+- Proper exit functionality.
+
+MAIN MENU:
+
+1. Dashboard
+2. Product Management
+3. Category Management
+4. Supplier Management
+5. Customer Management
+6. Purchase Management
+7. Sales Management
+8. Inventory Management
+9. Employee Management
+10. Expense Management
+11. Business Reports
+12. User Management
+13. Logout
+0. Exit
+
+16. JAVA CONCEPTS TO DEMONSTRATE
+Use:
+- Classes and Objects.
+- Encapsulation.
+- Inheritance where appropriate.
+- Abstraction.
+- Interfaces.
+- Polymorphism.
+- Method Overloading.
+- Constructors.
+- Collections.
+- Exception Handling.
+- Custom Exceptions.
+- JDBC.
+- PreparedStatement.
+- ResultSet.
+- Transaction Management.
+- File handling for optional invoice export.
+
+17. ERROR HANDLING
+Handle:
+- Invalid menu choices.
+- Empty inputs.
+- Invalid numbers.
+- Invalid dates.
+- Duplicate records.
+- Database connection failures.
+- SQL exceptions.
+- Insufficient stock.
+- Missing records.
+- Invalid login credentials.
+- Transaction failures.
+
+Never crash the application because of ordinary user input errors.
+
+18. PROJECT DOCUMENTATION
+Generate:
+- Complete README.md.
+- Project abstract.
+- Problem statement.
+- Objectives.
+- Scope.
+- Hardware and software requirements.
+- Functional requirements.
+- Non-functional requirements.
+- System architecture.
+- ER diagram.
+- Use case diagram.
+- DFD Level 0 and Level 1.
+- Database schema explanation.
+- Module descriptions.
+- Testing test cases.
+- Sample output.
+- Future enhancements.
+- Conclusion.
+
+19. TESTING
+Test every module.
+Include positive and negative test cases.
+Test purchase and sales stock updates.
+Test transaction rollback.
+Test login security.
+Test invalid input.
+Test duplicate product insertion.
+Test cancellation and stock restoration.
+
+20. FINAL DELIVERABLES
+Generate a complete working Maven Java project.
+Provide every Java source file.
+Provide pom.xml.
+Provide database.sql.
+Provide README.md.
+Provide sample login credentials.
+Provide setup instructions.
+Provide sample console outputs.
+Ensure the application compiles and runs successfully.
+
+IMPORTANT INSTRUCTIONS:
+- Do not generate pseudocode.
+- Do not leave TODO comments or incomplete methods.
+- Do not use hardcoded product or sales data instead of MySQL.
+- All CRUD operations must work with MySQL.
+- Use clean, modular, maintainable code.
+- Implement modules step by step.
+- Verify database connectivity.
+- Compile and test the entire project.
+- Fix all compilation and runtime errors before completion.
+- Prioritize correctness, database integrity, and practical business functionality.
+
+The final result must be a fully functional, professional college-level Java and MySQL console application suitable for an end-semester project demonstration and viva.

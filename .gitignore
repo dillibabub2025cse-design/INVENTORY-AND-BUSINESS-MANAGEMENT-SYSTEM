@@ -1,0 +1,27 @@
+# Secrets & Local Configurations
+database.local.properties
+config/database.local.properties
+.env
+*.local
+
+# Build artifacts
+target/
+*.class
+*.jar
+*.war
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Generated invoices & logs
+invoices/*.txt
+!invoices/.gitkeep
+*.log
+scratch/
+powershell.cmd
+
